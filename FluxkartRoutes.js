@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const fluxkartServiceImpl = require('../Service/FluxkartServiceImpl')
+const fluxkartServiceImpl = require('./FluxkartServiceImpl')
 
 
 // Route to identify contact

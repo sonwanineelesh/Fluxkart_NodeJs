@@ -1,6 +1,6 @@
 // fluxkartServiceImpl.js
 const Fluxkart = require('../Models/Fluxkart');
-const ContactResponse = require('../Models/ContactResponse');
+const ContactResponse = require('./ContactResponse');
 
 const identify = async (dto) => {
     const contactByPhoneNumber = await Fluxkart.find({ phoneNumber: dto.phoneNumber });

@@ -1,7 +1,7 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const fluxkartRoutes = require('./Fluxkart_node/Routes/FluxkartRoutes');  // Import your routes
+const fluxkartRoutes = require('./FluxkartRoutes');  // Import your routes
 
 const app = express();
 
