@@ -1,6 +1,7 @@
 // fluxkartServiceImpl.js
-const Fluxkart = require('./Fluxkart');
+
 const ContactResponse = require('./ContactResponse');
+const Fluxkart = require('./Fluxkart');
 
 const identify = async (dto) => {
     const contactByPhoneNumber = await Fluxkart.find({ phoneNumber: dto.phoneNumber });
@@ -12,25 +13,30 @@ const identify = async (dto) => {
     let linkPre1 = "";
     let numByEmail = null;
     let em = null;
-
+    const flux = new Fluxkart();
     contactByEmail.forEach(responseEmail => {
-        
+
+    
         if (responseEmail) {
-            linkPre1 = responseEmail.linkPrecedence;
-            idByEmail = responseEmail.id; // 11
-            em = responseEmail.email;
-            numByEmail = responseEmail.phoneNumber; // 919191
+            linkPre1 = responseEmail.linkPrecedence;//secondary
+            idByEmail = responseEmail.id; // 23
+            em = responseEmail.email;//mcfly
+            numByEmail = responseEmail.phoneNumber; // 123456
         }
     });
 
     for (const response of contactByPhoneNumber) {
-        if (linkPre1 === "Primary") {
+        if (linkPre1 === "primary") {
             response.linkedId = idByEmail;
-            response.linkPrecedence = "Secondary";
+            response.linkPrecedence = "secondary";
             emails.push(em); // goerge
             phoneNumbers.push(numByEmail); // 919191
         }
+    
+
+    await response.save()
     }
+
 
     if (contactByPhoneNumber.length !== 0) {
         return await searching(contactByPhoneNumber, contactByEmail, emails, phoneNumbers, secondaryContactIds);
@@ -53,7 +59,8 @@ const searching = async (byPhoneNumber, byEmail, emails, phoneNumbers, secondary
     byPhoneNumber.forEach(response => {
         emails.push(response.email); // biff
         phoneNumbers.push(response.phoneNumber);
-        if (response.linkPrecedence === "Secondary") {
+        console.log(response.linkPrecedence)
+        if (response.linkPrecedence === "secondary") {
             secondaryContactIds.push(response.id); // 27
             contactResponse.primaryContactId = response.linkedId;
         } else {

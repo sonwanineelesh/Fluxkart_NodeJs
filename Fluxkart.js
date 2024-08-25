@@ -5,16 +5,13 @@ const fluxkartSchema = new mongoose.Schema({
     id:
     {
         type: Number,
-        required: true
         
     },
     email: {
-        type: String,
-        required: true
+        type: String
     },
     phoneNumber: {
-        type: String,
-        required: true
+        type: String
     },
     linkedId: {
         type: Number,
