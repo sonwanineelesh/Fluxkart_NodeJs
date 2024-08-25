@@ -1,5 +1,5 @@
 // fluxkartServiceImpl.js
-const Fluxkart = require('../Models/Fluxkart');
+const Fluxkart = require('./Fluxkart');
 const ContactResponse = require('./ContactResponse');
 
 const identify = async (dto) => {
