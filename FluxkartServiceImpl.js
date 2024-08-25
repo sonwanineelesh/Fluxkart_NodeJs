@@ -31,12 +31,13 @@ const identify = async (dto) => {
             flux.linkPrecedence = "secondary";
             emails.push(em); // goerge
             phoneNumbers.push(numByEmail); // 919191
+            await flux.save()
         }
     
     }
     
 
-    await flux.save()
+    
 
 
     if (contactByPhoneNumber.length !== 0) {
