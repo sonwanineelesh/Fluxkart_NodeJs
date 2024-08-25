@@ -17,7 +17,7 @@ const uri = "mongodb+srv://sonwanineelesh:F3kvsrSVs1mbfwvx@fluxkartdb.r6nob.mong
 mongoose.connect(uri, {
   
 }).then(() => {
-  console.log("MongoDB connected successfully!");
+  console.log("MongoDB connected successfully! at post",PORT);
 }).catch((error) => { 
   console.error("MongoDB connection failed:", error);
 });
