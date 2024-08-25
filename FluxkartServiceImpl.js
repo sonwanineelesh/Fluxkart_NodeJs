@@ -27,15 +27,16 @@ const identify = async (dto) => {
 
     for (const response of contactByPhoneNumber) {
         if (linkPre1 === "primary") {
-            response.linkedId = idByEmail;
-            response.linkPrecedence = "secondary";
+            flux.linkedId = idByEmail;
+            flux.linkPrecedence = "secondary";
             emails.push(em); // goerge
             phoneNumbers.push(numByEmail); // 919191
         }
     
-
-    await response.save()
     }
+    
+
+    await flux.save()
 
 
     if (contactByPhoneNumber.length !== 0) {
