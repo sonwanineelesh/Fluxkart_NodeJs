@@ -14,6 +14,7 @@ const identify = async (dto) => {
     let em = null;
 
     contactByEmail.forEach(responseEmail => {
+        
         if (responseEmail) {
             linkPre1 = responseEmail.linkPrecedence;
             idByEmail = responseEmail.id; // 11
