@@ -26,7 +26,7 @@ const identify = async (dto) => {
     });
 
     for (const response of contactByPhoneNumber) {
-        if (linkPre1 === "primary") {
+        if (linkPre1 === "primary" && numByEmail !== response.getPhoneNumber()) {
             flux.linkedId = idByEmail;
             flux.linkPrecedence = "secondary";
             emails.push(em); // goerge
