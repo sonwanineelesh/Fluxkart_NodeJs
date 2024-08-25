@@ -5,13 +5,16 @@ const fluxkartSchema = new mongoose.Schema({
     id:
     {
         type: Number,
+        required: true
         
     },
     email: {
-        type: String
+        type: String,
+        required: true
     },
     phoneNumber: {
-        type: String
+        type: String,
+        required: true
     },
     linkedId: {
         type: Number,
@@ -19,7 +22,8 @@ const fluxkartSchema = new mongoose.Schema({
     },
     linkPrecedence: {
         type: String,
-        default: null
+        default: null,
+
     },
     createdAt: {
         type: Date,
