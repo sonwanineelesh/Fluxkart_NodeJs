@@ -12,13 +12,13 @@ app.use('/api', fluxkartRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/fluxkartdb', {
+const uri = "mongodb+srv://sonwanineelesh:F3kvsrSVs1mbfwvx@fluxkartdb.r6nob.mongodb.net/";
+
+mongoose.connect(uri, {
+  
 }).then(() => {
-    console.log("Connected to MongoDB");
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}).catch(err => {
-    console.error("Error connecting to MongoDB", err);
+  console.log("MongoDB connected successfully!");
+}).catch((error) => { 
+  console.error("MongoDB connection failed:", error);
 });
+

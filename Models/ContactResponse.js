@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Define the schema for ContactResponse
 const contactResponseSchema = new mongoose.Schema({
     primaryContactId: {
         type: Number,
