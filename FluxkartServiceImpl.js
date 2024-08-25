@@ -27,12 +27,13 @@ const identify = async (dto) => {
 
     for (const response of contactByPhoneNumber) {
         if (linkPre1 === "primary" && numByEmail !== response.phoneNumber) {
-            flux.linkedId = idByEmail;
-            flux.linkPrecedence = "secondary";
+            response.linkedId = idByEmail;
+            response.linkPrecedence = "secondary";
             emails.push(em); // goerge
             phoneNumbers.push(numByEmail); // 919191
 
             // await flux.save()
+            flux.updateOne({linkedId : idByEmail},{linkPrecedence:"secondary"});
         }
     // await flux.save()
     }
@@ -58,7 +59,7 @@ const searching = async (byPhoneNumber, byEmail, emails, phoneNumbers, secondary
     byPhoneNumber.forEach(response => {
         emails.push(response.email); // biff
         phoneNumbers.push(response.phoneNumber);
-        console.log(response.linkPrecedence)
+        
         if (response.linkPrecedence === "secondary") {
             secondaryContactIds.push(response.id); // 27
             contactResponse.primaryContactId = response.linkedId;
