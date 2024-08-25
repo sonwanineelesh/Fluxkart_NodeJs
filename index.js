@@ -17,7 +17,7 @@ app.listen(PORT, () => {
   })
 const uri = "mongodb+srv://sonwanineelesh:F3kvsrSVs1mbfwvx@fluxkartdb.r6nob.mongodb.net/";
 
-mongoose.connect(uri, {
+mongoose.connect(process.env.uri, {
   
 }).then(() => {
   console.log("MongoDB connected successfully! at port",PORT);
