@@ -77,7 +77,7 @@ deletedAt:null
 
 Then this web service will link these two accounts by making the other account secondary and by updating the secondary account's linkedId to primary account's id.
 
-For this web service the response body will be as given below:
+For this web service the request body will be as given below:
 ```
 {
     "email": "george@hillvalley.edu",
