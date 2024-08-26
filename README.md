@@ -139,6 +139,8 @@ All the links I am attaching below:
 ->Render Link : https://fluxkart-nodejs.onrender.com
 
 ->Render Link with POST api : https://fluxkart-nodejs.onrender.com/api/identify
+
+->Mongdb access url: mongodb+srv://sonwanineelesh:F3kvsrSVs1mbfwvx@fluxkartdb.r6nob.mongodb.net/
 ```
 
 Thanks & Regards,
